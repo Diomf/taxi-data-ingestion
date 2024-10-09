@@ -89,6 +89,6 @@ object Parsing {
     trips.join(broadcast(zones),
         col(s"${locationType}_location_id") === col("location_id"),
         "left")
-      .select(TRIPS_SCHEMA.fieldNames.map(col) ++ enrichmentCols: _*)
+      .select(trips.columns.map(col) ++ enrichmentCols: _*)
   }
 }
